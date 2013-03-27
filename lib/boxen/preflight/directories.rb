@@ -9,8 +9,12 @@ class Boxen::Preflight::Directories < Boxen::Preflight
   end
 
   def run
-    Boxen::Util.sudo("/bin/mkdir", "-p", config.homedir) &&
-      Boxen::Util.sudo("/usr/sbin/chown", "#{config.user}:staff", config.homedir)
+    Boxen::Util.sudo(env, "mkdir", "-p", config.homedir) &&
+      Boxen::Util.sudo(env, "chown", "#{config.user}:staff", config.homedir)
+  end
+
+  def env
+    "/usr/bin/env"
   end
 
   private

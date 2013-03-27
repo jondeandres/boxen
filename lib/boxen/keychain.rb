@@ -20,21 +20,23 @@ module Boxen
       @login = login
     end
 
-    def password
-      get PASSWORD_SERVICE
-    end
+    attr_accessor :password, :token
 
-    def password=(password)
-      set PASSWORD_SERVICE, password
-    end
+    # def password
+    #   get PASSWORD_SERVICE
+    # end
 
-    def token
-      get TOKEN_SERVICE
-    end
+    # def password=(password)
+    #   set PASSWORD_SERVICE, password
+    # end
 
-    def token=(token)
-      set TOKEN_SERVICE, token
-    end
+    # def token
+    #   get TOKEN_SERVICE
+    # end
+
+    # def token=(token)
+    #   set TOKEN_SERVICE, token
+    # end
 
     protected
 
